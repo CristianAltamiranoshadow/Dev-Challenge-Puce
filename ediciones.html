@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ediciones - DevChallenge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+   <div id="transition-overlay"></div>
+    <audio id="bgMusic" src="assets/audio/musica2.mp3" autoplay loop></audio>
+<button id="toggleMusic" class="music-btn" aria-label="Sonido activado">🔊</button>
+
+  <header class="header">
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+  <svg viewBox="0 0 100 100" width="40">
+    <path class="line line1" d="M 20,29 H 80 C 80,29 85,29 85,35 C 85,41 80,41 80,41 H 20" />
+    <path class="line line2" d="M 20,50 H 80" />
+    <path class="line line3" d="M 20,71 H 80 C 80,71 85,71 85,65 C 85,59 80,59 80,59 H 20" />
+  </svg>
+</button>
+
+    <div class="logo">DevChallenge<span>2025</span></div>
+    <nav class="nav" id="nav">
+      <a href="index.html">Inicio</a>
+      <a href="registro.html">Registro</a>
+      <a href="que-es.html">¿Qué es?</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="noticias.html">Noticias</a>
+      <a href="ediciones.html">Ediciones</a>
+    </nav>
+  </header>
+
+  
+
+  <main style="padding-top: 120px;">
+    <h2 style="text-align: center; margin-bottom: 30px;"><img src="img/ediciones.jpg" alt="Edición 2025" class="icono-noticia"> Ediciones Anteriores y Futuras</h2>
+
+    <section class="contenedor-tarjetas">
+      <!-- Edición 2024 -->
+      <div class="tarjeta-proyecto">
+        <div class="titulo-noticia">
+          <img src="img/ed2021.jpg" alt="Edición 2024" class="icono-noticia">
+          <h3>Edición 2024</h3>
+        </div>
+        <p>Más de 200 participantes se enfrentaron en retos de inteligencia artificial, desarrollo web y videojuegos. ¡Un año memorable lleno de talento y tecnología!</p>
+      </div>
+
+      <!-- Edición 2025 -->
+      <div class="tarjeta-proyecto">
+        <div class="titulo-noticia">
+          <img src="img/ed2024.jpg.png" alt="Edición 2025" class="icono-noticia">
+          <h3>Edición 2025</h3>
+        </div>
+        <p>¡La edición actual está en marcha! Nuevos retos, nuevas reglas, y más oportunidades de demostrar tus habilidades.</p>
+      </div>
+
+      <!-- Futuras Ediciones -->
+      <div class="tarjeta-proyecto">
+        <div class="titulo-noticia">
+          <img src="img/ed2023.jpg" alt="Futuro" class="icono-noticia">
+          <h3> Ediciones Futuras</h3>
+        </div>
+        <p>Nos preparamos para expandir el evento a nivel internacional y con nuevas categorías como robótica, realidad aumentada y blockchain.</p>
+      </div>
+    </section>
+  </main>
+<section class="galeria-ediciones">
+  <h2>Galería de Recuerdos</h2>
+  <div class="galeria-slider">
+    <div class="slide-track">
+      <img src="img/galeria1.jpeg" alt="Foto 1" class="galeria-img" />
+      <img src="img/galeria2.jpg" alt="Foto 2" class="galeria-img" />
+      <img src="img/galeria3.jpg" alt="Foto 3" class="galeria-img" />
+      <img src="img/galeria4.jpg" alt="Foto 4" class="galeria-img" />
+      <img src="img/galeria5.jfif" alt="Foto 5" class="galeria-img" />
+      <!-- Se repite para crear efecto continuo -->
+      <img src="img/galeria1.jpeg" alt="Foto 1" class="galeria-img" />
+      <img src="img/galeria2.jpg" alt="Foto 2" class="galeria-img" />
+      <img src="img/galeria3.jpg" alt="Foto 3" class="galeria-img" />
+      <img src="img/galeria4.jpg" alt="Foto 4" class="galeria-img" />
+      <img src="img/galeria5.jpg" alt="Foto 5" class="galeria-img" />
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <p>&copy; 2025 DevChallenge. Todos los derechos reservados Cristian Altamirano.</p>
+  </footer>
+<script src="script.js"></script>
+
+</body>
+</html>

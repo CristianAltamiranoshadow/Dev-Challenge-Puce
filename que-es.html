@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Qué es el Dev Challenge?</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    main.contenido {
+      max-width: 900px;
+      margin: 140px auto 60px;
+      padding: 20px;
+      background: linear-gradient(145deg, #1e0a2b, #120018);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(168, 85, 247, 0.25);
+    }
+
+    main h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #e0b3ff;
+    }
+
+    main h2 {
+      color: #a855f7;
+      margin-top: 30px;
+      font-size: 1.6rem;
+      border-bottom: 2px solid #a855f7;
+      padding-bottom: 5px;
+    }
+
+    main p {
+      font-size: 1.1rem;
+      margin-top: 10px;
+      color: #ddd;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+    <div id="transition-overlay"></div>
+    <audio id="bgMusic" src="assets/audio/musica4.mp3" autoplay loop></audio>
+<button id="toggleMusic" class="music-btn" aria-label="Sonido activado">🔊</button>
+
+  <header class="header">
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+  <svg viewBox="0 0 100 100" width="40">
+    <path class="line line1" d="M 20,29 H 80 C 80,29 85,29 85,35 C 85,41 80,41 80,41 H 20" />
+    <path class="line line2" d="M 20,50 H 80" />
+    <path class="line line3" d="M 20,71 H 80 C 80,71 85,71 85,65 C 85,59 80,59 80,59 H 20" />
+  </svg>
+</button>
+
+    <div class="logo">DevChallenge<span>2025</span></div>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <!-- ícono hamburguesa -->
+    </button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Inicio</a>
+      <a href="registro.html">Registro</a>
+      <a href="que-es.html">¿Qué es?</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="noticias.html">Noticias</a>
+      <a href="ediciones.html">Ediciones</a>
+    </nav>
+  </header>
+
+  <main class="contenido">
+    <h1>¿Qué es el Dev Challenge 2025?</h1>
+    <h2> Temática del evento </h2>
+    <p>Esta edición del Dev Challenge está enfocada en la innovación social mediante tecnología. Los equipos deberán crear soluciones creativas para retos comunitarios reales.</p>
+
+    <h2> Fases del Challenge</h2>
+    <p><strong>Objetivo:</strong> Brindar un espacio para que los estudiantes de desarrollo de software puedan mostrar sus habilidades, aprender nuevas técnicas y colaborar con otros entusiastas de la programación.<br>
+    <strong>Tema:</strong> Soluciones tecnológicas para Contención Emocional en la comunidad universitaria. Desarrollo de software como aplicaciones web, de escritorio, juegos, herramientas de productividad como estrategias de contención emocional dirigidas a la comunidad universitaria.<br>
+    <strong>Agradecemos:</strong> Presentación final ante el jurado.</p>
+
+    <h2> Preguntas Frecuentes</h2>
+    <p><strong>¿Quiénes pueden participar?</strong><br>estudiantes de TERCER SEMESTRE de la Tecnología Superior en Desarrollo de Software de todas las sedes de la PUCE<br>
+    <strong>¿Qué se evalúa?</strong><br>Innovación, funcionalidad, diseño, y presentación del proyecto.<br>
+    <strong>¿Puedo participar solo?</strong><br>Sí, aunque se recomienda formar equipos de 2 a 3 integrantes.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DevChallenge. Todos los derechos reservados Cristian Altamirano.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro - DevChallenge 2025</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .file-upload {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .custom-file-label {
+      background-color: #a855f7;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+      width: fit-content;
+      transition: background 0.3s;
+      font-weight: bold;
+      box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+    }
+
+    .custom-file-label:hover {
+      background-color: #9333ea;
+    }
+
+    .file-upload input[type="file"] {
+      display: none;
+    }
+
+    #nombreArchivo {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .vista-previa {
+      margin-top: 10px;
+      max-width: 150px;
+      border: 1px solid #444;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+    <audio id="bgMusic" src="assets/audio/musica6.mp3" autoplay loop></audio>
+    <button id="toggleMusic" class="music-btn" aria-label="Sonido activado">🔊</button>
+
+    <div id="transition-overlay"></div>
+
+  <header class="header">
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <svg viewBox="0 0 100 100" width="50">
+        <path class="line line1" d="M 20,29 H 80 C 80,29 85,29 85,35 C 85,41 80,41 80,41 H 20" />
+        <path class="line line2" d="M 20,50 H 80" />
+        <path class="line line3" d="M 20,71 H 80 C 80,71 85,71 85,65 C 85,59 80,59 80,59 H 20" />
+      </svg>
+    </button>
+    <div class="logo">DevChallenge<span>2025</span></div>
+    <nav class="nav" id="nav">
+      <a href="index.html">Inicio</a>
+      <a href="registro.html">Registro</a>
+      <a href="que-es.html">¿Qué es?</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="noticias.html">Noticias</a>
+      <a href="ediciones.html">Ediciones</a>
+    </nav>
+  </header>
+
+  <section class="registro-section">
+    <div class="registro-content">
+      <h2>Registro de Proyecto</h2>
+      <form id="formRegistro">
+        <input type="text" name="nombreProyecto" placeholder="Nombre del Proyecto" required />
+        <input type="text" name="participante1" placeholder="Nombre del Participante 1" required />
+        <input type="text" name="participante2" placeholder="Nombre del Participante 2 (opcional)" />
+        <input type="text" name="participante3" placeholder="Nombre del Participante 3 (opcional)" />
+        <textarea name="descripcion" placeholder="Descripción breve del proyecto" rows="4" required></textarea>
+
+        <!-- Input file personalizado -->
+        <div class="file-upload">
+          <label for="logoProyecto" class="custom-file-label">Subir imagen del proyecto</label>
+          <input type="file" id="logoProyecto" name="logoProyecto" accept="image/*" required>
+          <span id="nombreArchivo">Ningún archivo seleccionado</span>
+          <img id="vistaPrevia" class="vista-previa" src="#" alt="Vista previa" style="display:none;">
+        </div>
+
+        <button type="submit" class="btn">Enviar Registro</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 DevChallenge. Todos los derechos reservados Cristian Altamirano.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("logoProyecto");
+      const nombreArchivo = document.getElementById("nombreArchivo");
+      const vistaPrevia = document.getElementById("vistaPrevia");
+
+      input.addEventListener("change", () => {
+        if (input.files.length > 0) {
+          nombreArchivo.textContent = input.files[0].name;
+          const reader = new FileReader();
+          reader.onload = () => {
+            vistaPrevia.src = reader.result;
+            vistaPrevia.style.display = 'block';
+          };
+          reader.readAsDataURL(input.files[0]);
+        } else {
+          nombreArchivo.textContent = "Ningún archivo seleccionado";
+          vistaPrevia.style.display = 'none';
+        }
+      });
+
+      document.getElementById('formRegistro').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const nombreProyecto = this.nombreProyecto.value.trim();
+        const participante1 = this.participante1.value.trim();
+        const participante2 = this.participante2.value.trim();
+        const participante3 = this.participante3.value.trim();
+        const descripcion = this.descripcion.value.trim();
+        const logo = this.logoProyecto.files[0];
+
+        if (!logo) {
+          alert('Por favor, sube una imagen representativa.');
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function() {
+          const imagenBase64 = reader.result;
+
+          const nuevoProyecto = {
+            nombreProyecto,
+            participantes: [participante1, participante2, participante3].filter(p => p !== ''),
+            descripcion,
+            logo: imagenBase64
+          };
+
+          const proyectos = JSON.parse(localStorage.getItem('proyectos')) || [];
+          proyectos.push(nuevoProyecto);
+          localStorage.setItem('proyectos', JSON.stringify(proyectos));
+
+          alert('¡Proyecto registrado con éxito!');
+          document.getElementById('formRegistro').reset();
+          nombreArchivo.textContent = "Ningún archivo seleccionado";
+          vistaPrevia.style.display = 'none';
+        };
+
+        reader.readAsDataURL(logo);
+      });
+    });
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>

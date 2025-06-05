@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noticias - DevChallenge 2025</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="transition-overlay"></div>
+  <audio id="bgMusic" src="assets/audio/musica1.mp3" autoplay loop></audio>
+ <button id="toggleMusic" class="music-btn" aria-label="Sonido activado">🔊</button>
+
+
+  <header class="header">
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+  <svg viewBox="0 0 100 100" width="40">
+    <path class="line line1" d="M 20,29 H 80 C 80,29 85,29 85,35 C 85,41 80,41 80,41 H 20" />
+    <path class="line line2" d="M 20,50 H 80" />
+    <path class="line line3" d="M 20,71 H 80 C 80,71 85,71 85,65 C 85,59 80,59 80,59 H 20" />
+  </svg>
+</button>
+
+    <div class="logo">DevChallenge<span>2025</span></div>
+    <nav class="nav" id="nav">
+      <a href="index.html">Inicio</a>
+      <a href="registro.html">Registro</a>
+      <a href="que-es.html">¿Qué es?</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="noticias.html">Noticias</a>
+      <a href="ediciones.html">Ediciones</a>
+    </nav>
+  </header>
+
+  <main style="padding-top: 120px;">
+    
+    <h2 style="text-align: center; margin-bottom: 30px;"><img src="img/nt1.png" alt="Noticia 1" class="icono-noticia"> Noticias del Evento</h2>
+
+    <section class="contenedor-tarjetas">
+      <!-- Noticia 1 -->
+      <div class="tarjeta-proyecto">
+        <h3>Lanzamiento Oficial del DevChallenge 2025</h3><img src="img/nt3.jpg" alt="Noticia 1" class="icono-noticia">
+        <p><strong>Fecha:</strong> 10 de junio, 2025</p>
+        <p>¡Comienza la cuenta regresiva! Ya puedes registrarte para participar en el evento de programación más esperado del año. Este año nos enfocamos en tecnología, creatividad y trabajo en equipo.</p>
+      </div>
+
+      <!-- Noticia 2 -->
+      <div class="tarjeta-proyecto">
+        <h3>Premios Confirmados </h3><img src="img/nt2.png" alt="Noticia 1" class="icono-noticia">
+        <p><strong>Fecha:</strong> 15 de junio, 2025</p>
+        <p>Gracias al apoyo de nuestros patrocinadores, este año contaremos con laptops, becas y mentorías exclusivas para los ganadores. ¡Prepárate para dar lo mejor!</p>
+      </div>
+
+      <!-- Más noticias se pueden añadir aquí -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DevChallenge. Todos los derechos reservados Cristian Altamirano.</p>
+  </footer>
+<script src="script.js"></script>
+
+</body>
+</html>
